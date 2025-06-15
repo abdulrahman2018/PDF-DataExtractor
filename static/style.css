@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #2d3748;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #718096;
+    font-size: 1.1rem;
+}
+
+.upload-section {
+    margin-bottom: 2rem;
+}
+
+.upload-box {
+    background-color: white;
+    border: 2px dashed #cbd5e0;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-box:hover {
+    border-color: #4299e1;
+    background-color: #f7fafc;
+}
+
+.upload-box.dragover {
+    border-color: #4299e1;
+    background-color: #ebf8ff;
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.upload-box h2 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.upload-box p {
+    color: #718096;
+    margin-bottom: 1rem;
+}
+
+.upload-button {
+    display: inline-block;
+    background-color: #4299e1;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #3182ce;
+}
+
+.files-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.files-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.file-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background-color: #f7fafc;
+    border-radius: 4px;
+}
+
+.file-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-name img {
+    width: 24px;
+    height: 24px;
+}
+
+.file-size {
+    color: #718096;
+    font-size: 0.875rem;
+}
+
+.remove-file {
+    color: #e53e3e;
+    cursor: pointer;
+    padding: 0.25rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.remove-file:hover {
+    color: #c53030;
+}
+
+.progress-section {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4299e1;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.process-button, .download-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.process-button {
+    background-color: #4299e1;
+    color: white;
+}
+
+.process-button:hover:not(:disabled) {
+    background-color: #3182ce;
+}
+
+.process-button:disabled {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+}
+
+.download-button {
+    background-color: #48bb78;
+    color: white;
+}
+
+.download-button:hover {
+    background-color: #38a169;
+}
+
+.notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.notification.success {
+    background-color: #48bb78;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification.error {
+    background-color: #e53e3e;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .upload-box {
+        padding: 2rem 1rem;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .process-button, .download-button {
+        width: 100%;
+    }
+} 

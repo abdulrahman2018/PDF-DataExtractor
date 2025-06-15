@@ -116,4 +116,4 @@ Extract structured data (names, dates, amounts, and more) from PDF files and exp
 ---
 
 ## License
-MIT (or your preferred license) 
+MIT (or your preferred license) # PDF-DataExtractor

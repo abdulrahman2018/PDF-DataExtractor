@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Data Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Data Extractor</h1>
+            <p>Extract structured data from your PDF files</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="dropZone">
+                    <img src="{{ url_for('static', filename='upload-icon.svg') }}" alt="Upload" class="upload-icon">
+                    <h2>Drag & Drop PDF Files Here</h2>
+                    <p>or</p>
+                    <label for="fileInput" class="upload-button">Choose Files</label>
+                    <input type="file" id="fileInput" multiple accept=".pdf" style="display: none;">
+                </div>
+            </div>
+
+            <div class="files-section">
+                <h2>Selected Files</h2>
+                <div id="fileList" class="file-list"></div>
+            </div>
+
+            <div class="progress-section" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <p id="progressText">Processing...</p>
+            </div>
+
+            <div class="actions">
+                <button id="processButton" class="process-button" disabled>Process Files</button>
+                <button id="downloadButton" class="download-button" style="display: none;">Download Excel</button>
+            </div>
+        </main>
+
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
